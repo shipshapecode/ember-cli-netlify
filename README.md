@@ -1,6 +1,8 @@
 ember-cli-netlify
 ==============================================================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/shipshapecode/ember-cli-netlify.svg)](https://greenkeeper.io/)
+
 [Short description of the addon.]
 
 Installation
