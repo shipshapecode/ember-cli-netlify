@@ -1,9 +1,10 @@
 {
   "name": "ember-cli-netlify",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An Ember addon to configure Netlify",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "netlify"
   ],
   "license": "MIT",
   "author": "",
@@ -20,12 +21,13 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.6.0"
+    "fs-extra": "^5.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.0-beta.1",
+    "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
