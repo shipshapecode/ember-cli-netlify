@@ -14,7 +14,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/shipshapecode/ember-cli-netlify"
+  },
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
