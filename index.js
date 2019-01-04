@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 
 module.exports = {
   name: require('./package').name,
-  outputReady(result) {
+  outputReady() {
     if (fs.pathExistsSync('.netlifyheaders')) {
       fs.copySync('.netlifyheaders', 'dist/_headers', { clobber: true });
     }
