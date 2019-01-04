@@ -3,7 +3,7 @@
 const fs = require('fs-extra');
 
 module.exports = {
-  name: 'ember-cli-netlify',
+  name: require('./package').name,
   outputReady(result) {
     if (fs.pathExistsSync('.netlifyheaders')) {
       fs.copySync('.netlifyheaders', 'dist/_headers', { clobber: true });
