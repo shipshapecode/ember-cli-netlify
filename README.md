@@ -23,7 +23,7 @@ Usage
 
 ### .netlifyheaders and/or .netlifyredirects
 
-There are a couple ways to use this addon. The first one is to define a `.netlifyheaders` 
+There are a few ways to use this addon. The first one is to define a `.netlifyheaders` 
 and/or a `.netlifyredirects` file in the root of your project and this
 addon will copy the output to `dist/_headers` and `dist/_redirects` respectively.
 
@@ -44,7 +44,8 @@ appended to the existing files. Currently, only redirects are supported, not hea
 
 ### Using in an addon
 
-Addon authors may declare redirects for ember-cli-netlify during compilation. To do so, you will want to:
+The final option, for addon authors, is to declare redirects for ember-cli-netlify during compilation. 
+To do so, you will want to:
 
 * Add `"ember-cli-netlify-plugin"` to your addon's package.json keywords array.
 * Define a `netlifyRedirects()` function in your addon's main file, that returns an array of redirects.
