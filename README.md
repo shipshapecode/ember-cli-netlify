@@ -42,6 +42,14 @@ appended to the existing files. Currently, only redirects are supported, not hea
 }
 ```
 
+### Using in an addon
+
+Addon authors may declare redirects for ember-cli-netlify during compilation. To do so, you will want to:
+
+* Add `"ember-cli-netlify-plugin"` to your addon's package.json keywords array.
+* Define a `netlifyRedirects()` function in your addon's main file, that returns an array of redirects.
+* Advise your addon's users to install & configure `ember-cli-netlify` in the host application.
+
 
 Contributing
 ------------------------------------------------------------------------------

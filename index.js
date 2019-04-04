@@ -6,6 +6,7 @@ module.exports = {
   name: require('./package').name,
   outputReady() {
     const netlifyOptions = this.app.options['ember-cli-netlify'];
+    const redirectsFromPlugins = loadNetlifyRedirects(this);
 
     if (fs.pathExistsSync('.netlifyheaders')) {
       fs.copySync('.netlifyheaders', 'dist/_headers', { clobber: true });
@@ -17,12 +18,29 @@ module.exports = {
       fs.writeFileSync('dist/_redirects');
     }
 
+    const stream = fs.createWriteStream('dist/_redirects', { flags: 'a' });
+
     if (netlifyOptions && netlifyOptions.redirects) {
-      const stream = fs.createWriteStream('dist/_redirects', { flags: 'a' });
       netlifyOptions.redirects.forEach((redirect) => {
         stream.write(`${redirect}\n`);
       });
-      stream.end();
     }
+
+    if (redirectsFromPlugins && redirectsFromPlugins.length) {
+      redirectsFromPlugins.forEach((redirect) => {
+        stream.write(`${redirect}\n`);
+      });
+    }
+
+    stream.end();
   }
 };
+
+function loadNetlifyRedirects(context) {
+  const addons = context.project.addons || [];
+
+  return addons
+    .filter((addon) => addon.pkg.keywords.includes('ember-cli-netlify-plugin'))
+    .filter((addon) => typeof addon.netlifyRedirects === 'function')
+    .map((addon) => addon.netlifyRedirects.bind(addon));
+}
