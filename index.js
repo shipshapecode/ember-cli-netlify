@@ -6,7 +6,11 @@ module.exports = {
   name: require('./package').name,
   outputReady() {
     const netlifyOptions = this.app.options['ember-cli-netlify'];
-    const redirectsFromPlugins = loadNetlifyRedirects(this);
+    const pluginRedirectFunctions = loadNetlifyRedirects(this);
+
+    let redirectsFromPlugins = pluginRedirectFunctions.reduce((redirects, pluginRedirectFunction) => {
+      return redirects.concat(pluginRedirectFunction());
+    }, []);
 
     if (fs.pathExistsSync('.netlifyheaders')) {
       fs.copySync('.netlifyheaders', 'dist/_headers', { clobber: true });
