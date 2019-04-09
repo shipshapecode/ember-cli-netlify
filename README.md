@@ -1,6 +1,16 @@
 ember-cli-netlify
 ==============================================================================
 
+<a href="https://shipshape.io/"><img src="http://i.imgur.com/DWHQjA5.png" alt="Ship Shape" width="100" height="100"/></a>
+
+**[ember-cli-netlify is built and maintained by Ship Shape. Contact us for Ember.js consulting, development, and training for your project](https://shipshape.io/ember-consulting/)**.
+
+[![npm version](https://badge.fury.io/js/ember-cli-netlify.svg)](http://badge.fury.io/js/ember-cli-netlify)
+![Download count all time](https://img.shields.io/npm/dt/ember-cli-netlify.svg)
+[![npm](https://img.shields.io/npm/dm/ember-cli-netlify.svg)]()
+[![Ember Observer Score](http://emberobserver.com/badges/ember-cli-netlify.svg)](http://emberobserver.com/addons/ember-cli-netlify)
+[![Build Status](https://travis-ci.org/shipshapecode/ember-cli-netlify.svg)](https://travis-ci.org/shipshapecode/ember-cli-netlify)
+
 This addon allows you to configure your Netlify headers and redirects.
 
 
