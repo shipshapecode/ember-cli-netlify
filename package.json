@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-netlify",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An Ember addon to configure Netlify headers and redirects",
   "keywords": [
     "ember-addon",
